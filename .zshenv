@@ -1,6 +1,5 @@
 export ZDOTDIR="$HOME/.config/.zsh"
 export PATH=$HOME/.local/bin:$PATH
-
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
+if [ "(tty)" = "/dev/tty1" ];then
+  exec  dbus-run-session Hyprland
 fi
