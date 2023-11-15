@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="Suckless X screen locker"
+supervisor="supervise-daemon"
+command=""
+command_args="/usr/bin/slock"
+supervise_daemon_args=" -e DISPLAY=\":0\""
+command_user="%i"
+
+depend() {
+        before sleep
+}
