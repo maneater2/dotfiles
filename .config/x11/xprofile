@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Set a random wallpaper
+wallpapers &
+
+# Allow notifications
+dunst &
+
+# Hide mouse cursor after three seconds.
+unclutter-xfixes -idle 3 -root &
+
+# Start up my status bar
+dwmblocks &
+
+# Start screen locker
+xautolock -locker slock -time 30 &
+
+# Start pipewire
+/usr/libexec/pipewire-launcher >/dev/null 2>&1
