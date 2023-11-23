@@ -1,0 +1,3 @@
+URxvt.font:		xft:JetBrainsMono Nerd Font:size=11
+URxvt.scrollBar:	false
+URxvt.geometry:		50x55
