@@ -1,0 +1,24 @@
+#! /bin/sh
+
+sxhkd &
+bspc monitor -d 1 2 3 4 5 6 7 8 &
+~/.config/polybar/launch.sh &
+
+bspc config border_width         2
+bspc config window_gap          12
+bspc config top_padding 30
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config focused_border_color "#70b8ca"
+
+dunst &
+picom -fb &
+xsetroot -cursor_name left_ptr &
+xwallpaper --zoom ~/.local/wallpapers/mount.jpg
+xset r rate 200 50
