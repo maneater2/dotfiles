@@ -2,7 +2,7 @@
 
 This repo contains all my configs I use.
 
-## getting-started
+## getting started
 
 My dotfiles are managed with `stow`, which manages symlinks so that the files in this dotfiles repo are synced with the actual configs.
 
