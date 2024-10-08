@@ -22,6 +22,6 @@ cd dotfiles
 After that, you just need to run the stow command to symlink the dotfiles you want.
 
 ```shell
-stow alacritty fish kitty nvim picom tmux vscode xorg
+stow alacritty fish kitty nvim picom tmux hypr
 ```
 
