@@ -15,7 +15,7 @@ sudo pacman -S stow
 # gentoo
 doas emerge -av app-admin/stow
 
-git clone https://github.com/maxhu08/dotfiles
+git clone https://github.com/maneater2/dotfiles
 cd dotfiles
 ```
 
