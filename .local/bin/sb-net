@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Checks internet
+
+case $BUTTON in
+	1) notify-send "Public ip address: $(printf "$(curl -Ls ifconfig.me)\n")" ;;
+	3) notify-send "Local ip address: $(ip -o addr show | grep 'inet 192.168' | awk '{ print $4 }' | sed 's|/.*||')"
+esac
+
+echo "$(sed "s/down/DOWN/;s/up/UP/" /sys/class/net/eth1/operstate 2>/dev/null)"

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Set wallpaper
+wallpapers &
+
+# Allow notifications
+dunst &
+
+# Add compositing
+xcompmgr &
+
+# Hide mouse cursor after 3 sec.
+unclutter-xfixes -idle 3 -root &
+
+# Start statusbar
+dwmblocks &
+
+# Start screen locker
+xautolock -locker slock -time 30 &
+
+# Start pipewire
+pipewire &
+pipewire-pulse &
+wireplumber &

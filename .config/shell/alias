@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Custom aliases
+alias ed="ed -p '*'"
+alias yt-dlp="yt-dlp --embed-metadata --restrict-filenames -i"
+alias locate="plocate"
+alias sxiv="nsxiv"

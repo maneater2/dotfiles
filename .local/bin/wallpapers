@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Script to set wallpapers
+
+wp_dir="$HOME/.local/wallpapers"
+get_wp=$(ls $wp_dir | shuf -n 1)
+
+if [ -z "$1" ]; then
+	xwallpaper --zoom "$wp_dir/$get_wp"
+else
+	xwallpaper --zoom "$1"
+fi
