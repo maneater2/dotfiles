@@ -6,7 +6,7 @@ wp_dir="$HOME/.local/wallpapers"
 get_wp=$(ls $wp_dir | shuf -n 1)
 
 if [ -z "$1" ]; then
-	xwallpaper --zoom "$wp_dir/$get_wp"
+	xwallpaper --zoom "$wp_dir/$get_wp"; wal -n -i "$wp_dir/$get_wp"
 else
-	xwallpaper --zoom "$1"
+	xwallpaper --zoom "$1"; wal -n -i "$1"
 fi

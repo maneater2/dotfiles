@@ -7,10 +7,10 @@ wallpapers &
 dunst &
 
 # Add compositing
-xcompmgr &
+picom &
 
 # Hide mouse cursor after 3 sec.
-unclutter-xfixes -idle 3 -root &
+unclutter -idle 3 -root &
 
 # Start statusbar
 dwmblocks &

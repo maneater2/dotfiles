@@ -12,5 +12,6 @@ They include:
   - X11/Xorg
   - yash
   - zathura
+  - picom
   - and more
 - My personal scripts
