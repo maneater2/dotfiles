@@ -8,6 +8,7 @@ all: configs scripts dwm
 configs:
 	mkdir -p ${CONF}
 	cp -r .config/* ${CONF}/
+        cp .yashrc ${HOME}/
 
 scripts:
 	mkdir -p ${PREFIX}/bin/
