@@ -3,12 +3,12 @@ CONF = ${HOME}/.config
 GITSITE = "https://github.com/maneater2"
 ROOTCOMMAND = $(shell command -v sudo || command -v doas)
 
-all: configs scripts dwm 
+all: configs scripts dwm wallpapers
 
 configs:
 	mkdir -p ${CONF}
 	cp -r .config/* ${CONF}/
-        cp .yashrc ${HOME}/
+        cp .yashrc ${HOME}
 
 scripts:
 	mkdir -p ${PREFIX}/bin/
@@ -23,3 +23,6 @@ dwm:
 	cd src/dwmblocks && make && ${ROOTCOMMAND} make install
 	cd src/st && make && ${ROOTCOMMAND} make install
 	cd src/dmenu && make && ${ROOTCOMMAND} make install
+
+wallpapers:
+	cp -r .local/wallpapers ${PREFIX}
