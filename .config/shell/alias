@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Custom aliases
+alias ed="ed -p '*'"
+alias yt-dlp="yt-dlp --embed-metadata --restrict-filenames -i"
+alias locate="plocate"
+alias updatedb="doas updatedb"
+alias otp="pass otp"
+alias ffmpeg="ffmpeg -hide_banner"
