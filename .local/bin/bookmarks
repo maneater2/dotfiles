@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+bm_file="${XDG_DATA_HOME:-$HOME/.local/share}/bookmarks"
+[ ! -f $bm_file ] && touch $bm_file
+
+mark="$(cat $bm_file | dmenu -i -l 20 -p 'Bookmarks:')"
+[ ! -z $mark ] && $BROWSER $mark

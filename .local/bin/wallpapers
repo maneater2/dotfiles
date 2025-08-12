@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+d="$HOME/.local/wallpapers"
+w=$(ls $d | shuf -n 1)
+
+if [ -z "$1" ]; then
+	xwallpaper --zoom "$d/$w"
+else
+	xwallpaper --zoom "$1"
+fi

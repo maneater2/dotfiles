@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+case $BUTTON in
+	1) notify-send "Public ip address: $(printf "$(curl -Ls ifconfig.me)\n")" ;;
+	3) notify-send "Local ip address: $(ip -o addr show | grep 'global' | awk '{ print $4 }' | sed 's|/.*||')"
+esac
+
+eth="$(grep up /sys/class/net/e*/operstate 2>/dev/null)"
+wlan="$(sed "s/down/DOWN/;s/up/UP/" /sys/class/net/w*/operstate 2>/dev/null)"
+
+if [ ! -z "$wlan" ]; then
+	echo "$wlan"
+else
+	if [ "$eth" = "up" ]; then
+		echo UP
+	else
+		echo DOWN
+	fi
+fi

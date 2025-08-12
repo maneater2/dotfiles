@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+# Gets volume
+vol="$(amixer get Master | grep -oP '\[\K[0-9]+(?=%\])')"
+
+case $BUTTON in
+	1) setsid "$TERMINAL" -e alsamixer; pkill -RTMIN+3 dwmblocks ;;
+	2) amixer set Master toggle ;;
+esac
+
+if [ $(amixer get Master | grep -oP '\[.*\]' | head -n 1 | awk '{print $3}') = "[off]" ]; then
+	echo "Mute"
+else
+	echo "$vol"
+fi

@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+c=$(cut -d ';' -f1 ${XDG_DATA_HOME:-$HOME/.local/share}/unicode | dmenu -i -l 30 | sed "s/ .*//")
+
+[ -z "$c" ] && exit 1
+
+if [ -n "$1" ]; then
+	xdotool type "$c" >/dev/null 2>&1
+else
+	printf "$c" | xclip -selection clipboard
+	notify-send "'$c' copied to clipboard."
+fi
